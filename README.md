@@ -10,8 +10,8 @@ range(start,stop,step)/range(1,10,2) => 1 3 5 7 9
 因為是ascending且有固定區間(closed interval)  
 比mid大在右半部，反之為左半部，等於mid則完成查找  
 都沒有找到return -1  
-[ ]的closed interval的***left,right*** 值改變為***mid+1 or mid-1***  
-[ )的open interval的***left,right*** 值改變為***mid***  
+[ ]的closed interval的***left,right*** 值改變為***mid+1,mid-1***  
+[ )的open interval的***left,right*** 值改變為***mid+1,mid***  
 
 ---------------------------------------------------
 
