@@ -26,8 +26,8 @@ range(start,stop,step)/range(1,10,2) => 1 3 5 7 9
 
 ## 977. Squares of a Sorted Array  
 這題可以很直觀的暴力解出來，但根據使用的sorting method將會使時間複雜度為O(nlogn) or O(n^2)  
-因為他是原始的array就是有序的，如果使用兩個index就可以很簡單的將左右兩側square後的數字從大排到小  
-且只會有一次的遍歷，所以為O(n)  
+因為他是原始的array就是有序的，如果使用兩個index就可以很簡單的從左右兩側square往中間的數字從大排到小  
+且只會有一次的遍歷array，所以為O(n)  
 如果是從後面往前排，就變成小排到大  
 
 ***
