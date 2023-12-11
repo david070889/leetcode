@@ -31,3 +31,8 @@ range(start,stop,step)/range(1,10,2) => 1 3 5 7 9
 如果是從後面往前排，就變成小排到大  
 
 ***
+
+## 209.Minimum Size Subarray Sum  
+\star\star\star
+第一次的code為將全部可能都找出來，結果就是會超時(O(n^2))  
+第二次
