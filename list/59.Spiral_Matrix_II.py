@@ -57,7 +57,7 @@ class Solution:
             matrix[layer][layer-1] = insert[a+3]
         return matrix
 
-
+#單純將code長度再縮短
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
         matrix = []
