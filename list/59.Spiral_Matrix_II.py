@@ -26,10 +26,10 @@ class Solution:
                 for q in range(j,L,-1): #最外層 m(j,0)到m(1,0)
                     matrix[q][L] = insert[a+j-q]
                 a += n-1-2*L
-                i += 1
-                j -= 1
-                L += 1
-            matrix[layer-1][layer-1] = n**2
+                i += 1 #當最外圈完成 i+1 代表往內移動一圈
+                j -= 1 #j+1表示每次的末端的index往內縮 # [L | x | x | j-1] -->
+                L += 1 #L+1表示每次開頭的index也往內縮   [x | L |j-1|  x ]  (x為已填入的值)
+                matrix[layer-1][layer-1] = n**2
             
 
         else : #n為even
