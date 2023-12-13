@@ -43,4 +43,6 @@ $\large\large\star \large\large\star \large\large\star$
 ## 59.Spiral Matrix II  
 $\large\large\star \large\large\star \large\large\star \large\large\star$  
 解題思路為 matrix由外到內 且 將每個layer又分成4個部分 依序處理 向右 向下 向左 向上的數字填入  
+我們又將n分為奇數、偶數，這樣能更好的減少需要思考的迴圈參數，因為n為odd、even的最內層分別為1個數字 和 4個數字  
+不論奇數，偶數，外層的處理都是一樣的，所以能看到我將第一段code縮減為第二段code  
 
