@@ -14,11 +14,11 @@ class Solution:
         if n % 2 == 1: #n為odd
             layer = int((n+1)/2) #算出總共有幾層(中間的單個值也算一層)
             while i < layer - 1: #我們控制這裡的遞迴 只會到從外圈開始屬的倒數第二層 #雖然一開始一次插入j個，但是用range取範圍index只會到j-1，剛好符合
-                for q in range(L,j): #從最層的第一個開始 m(0,0) 到 m(0,j-1)
-                    matrix[L][q] = insert[a+q-L] #insert[0:j-1]，插入j個
+                for q in range(L,j): #從最外層的第一個開始 m(0,0) 到 m(0,j-1)
+                    matrix[L][q] = insert[a+q-L] #insert[0:j-1]，插入j個 #L的部分解釋為，每向內移動一層，則填入數字的index區間就少一個
                 a += n-1-2*L #每次插入後，加入插入的格數，使得下次帶入a即為當前插入開始的index
-                for q in range(L,j):
-                    matrix[q][j] = insert[a+q-L]
+                for q in range(L,j): #最外層 m(0,j)到m(j-1,j)
+                    matrix[q][j] = insert[a+q-L] 
                 a += n-1-2*L
                 for q in range(j,L,-1):
                     matrix[j][q] = insert[a+j-q]
