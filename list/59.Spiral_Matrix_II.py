@@ -15,7 +15,7 @@ class Solution:
             layer = int((n+1)/2) #算出總共有幾層(中間的單個值也算一層)
             while i < layer - 1: #我們控制這裡的遞迴 只會到從外圈開始屬的倒數第二層 #雖然一開始一次插入j個，但是用range取範圍index只會到j-1，剛好符合
                 for q in range(L,j): #從最外層的第一個開始 m(0,0) 到 m(0,j-1)
-                    matrix[L][q] = insert[a+q-L] #insert[0:j-1]，插入j個 #L的部分解釋為，每向內移動一層，則填入數字的index區間就少一個
+                    matrix[L][q] = insert[a+q-L] #insert[0:j-1]，插入j個 #L的部分解釋為，每向內移動一層，則填入數字的index區間就少一個  #這裡的-L是為了讓insert的index可以從前值開始插入 q-L一開始會出現值的順序為0.1.2..
                 a += n-1-2*L #每次插入後，加入插入的格數，使得下次帶入a即為當前插入開始的index #後面的L控制每向內一圈，則步數少了2
                 for q in range(L,j): #最外層 m(0,j)到m(j-1,j)
                     matrix[q][j] = insert[a+q-L] 
