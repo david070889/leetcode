@@ -19,10 +19,10 @@ class Solution:
                     #這裡的-L是為了讓insert的index可以從前值開始插入 q-L一開始會出現值的順序為0.1.2..
                 a += n-1-2*L #每次插入後，加入插入的格數，使得下次帶入a即為當前插入開始的index #後面的L控制每向內一圈，則步數少了2
                 for q in range(L,j): #最外層 m(0,j)到m(j-1,j)
-                    matrix[q][j] = insert[a+q-L] 
+                    matrix[q][j] = insert[a+q-L] #用這裡的[q][j]解釋，j就是當前最邊的index(跟當前所處layer(L)有關)，q就是可以填入我們前望的j-L個值
                 a += n-1-2*L
                 for q in range(j,L,-1): #最外層 m(j,j)到m(j,1) #因為這邊matrix插入順序是右到左，所以range是大到小，造成insert這邊需要變成j-q才會是小到大
-                    matrix[j][q] = insert[a+j-q]
+                    matrix[j][q] = insert[a+j-q] #j-q讓index的順序為0.1.2....
                 a += n-1-2*L
                 for q in range(j,L,-1): #最外層 m(j,0)到m(1,0)
                     matrix[q][L] = insert[a+j-q]
