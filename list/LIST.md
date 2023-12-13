@@ -33,7 +33,7 @@ range(start,stop,step)/range(1,10,2) => 1 3 5 7 9
 ***
 
 ## 209.Minimum Size Subarray Sum  
-$\large\large\star \large\large\star \large\large\star \large\large\star$  
+$\large\large\star \large\large\star \large\large\star$  
 (回來重看)  
 第一部份的code為將全部可能都找出來，結果就是會超時(O(n^2))   
 第二部分設兩個index，將index內所有elements加總，並持續更新minlength，就可以找到最小的長度  
