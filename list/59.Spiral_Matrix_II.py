@@ -5,8 +5,8 @@ class Solution:
         for i in range(n): #初始化matrix
             matrix.append([0]*n)
         i = 0 #控制while迴圈 iteration的次數
-        j = n-1 #控制每次插入的個數
-        L = 0 #現在處於得layer數 外->內為 0->layer-1 
+        j = n-1 #控制每次插入的個數 #控制插入的末端  #L|x|x|j n為5的矩陣，插入最外圈一次需要4個數字，L就是每次開始index j為每次結束的index(一圈分別為上下左右4次)
+        L = 0 #現在處於得layer數 外->內為 0->layer-1 #控制插入的頭 
         a = 0 #starting point of insert list
         for x in  range(n**2): #將準備插入的1到n^2都在list中準備好
             insert.append(x+1)
@@ -20,7 +20,7 @@ class Solution:
                 for q in range(L,j): #最外層 m(0,j)到m(j-1,j)
                     matrix[q][j] = insert[a+q-L] 
                 a += n-1-2*L
-                for q in range(j,L,-1): #最外層 m(j,j)到m(j,1)
+                for q in range(j,L,-1): #最外層 m(j,j)到m(j,1) #因為這邊matrix插入順序是右到左，所以range是大到小，造成insert這邊需要變成j-q才會是小到大
                     matrix[j][q] = insert[a+j-q]
                 a += n-1-2*L
                 for q in range(j,L,-1): #最外層 m(j,0)到m(1,0)
